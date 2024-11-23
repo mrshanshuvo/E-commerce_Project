@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ClickBazaar</title>
+    <link rel="stylesheet" href="home.css" />
+  </head>
+  <body>
+    <header>
+      <div class="header-content">
+        <!-- Category Filter -->
+        <div class="category-filter">
+          <label for="category">Category:</label>
+          <select id="category" name="category">
+            <option value="all">All Categories</option>
+            <option value="electronics">Electronics</option>
+            <option value="fashion">Fashion</option>
+            <option value="home">Home & Garden</option>
+            <option value="toys">Toys</option>
+            <option value="books">Books</option>
+            <option value="health">Health & Beauty</option>
+            <option value="sports">Sports & Outdoors</option>
+            <option value="food">Food & Grocery</option>
+          </select>
+        </div>
+
+        <!-- Search Container (Centered) -->
+        <div class="search-container">
+          <input type="text" id="search" placeholder="Search products..." />
+          <button type="submit" class="search-btn" id="search-btn">
+            Search
+          </button>
+        </div>
+
+        <!-- Go to Cart Button -->
+        <a href="cart.html" class="go-to-cart-btn">Go to Cart</a>
+      </div>
+    </header>
+
+    <main>
+      <!-- Product list section -->
+      <section id="product-list">
+        <!-- Electronics -->
+        <div class="product" data-category="electronics">
+          <img src="https://via.placeholder.com/150" alt="Product 1" />
+          <h3>Smartphone</h3>
+          <p>৳21,599</p>
+          <p>Rating: ⭐⭐⭐⭐⭐</p>
+          <button>Add to Cart</button>
+        </div>
+
+        <!-- Fashion -->
+        <div class="product" data-category="fashion">
+          <img src="https://via.placeholder.com/150" alt="Product 5" />
+          <h3>T-Shirt</h3>
+          <p>৳2,159</p>
+          <p>Rating: ⭐⭐⭐⭐</p>
+          <button>Add to Cart</button>
+        </div>
+
+        <!-- Home & Garden -->
+        <div class="product" data-category="home">
+          <img src="https://via.placeholder.com/150" alt="Product 9" />
+          <h3>Chair</h3>
+          <p>৳8,639</p>
+          <p>Rating: ⭐⭐⭐⭐⭐</p>
+          <button>Add to Cart</button>
+        </div>
+
+        <!-- Toys -->
+        <div class="product" data-category="toys">
+          <img src="https://via.placeholder.com/150" alt="Product 13" />
+          <h3>Toy Car</h3>
+          <p>৳1,619</p>
+          <p>Rating: ⭐⭐⭐</p>
+          <button>Add to Cart</button>
+        </div>
+
+        <!-- Books -->
+        <div class="product" data-category="books">
+          <img src="https://via.placeholder.com/150" alt="Product 17" />
+          <h3>Novel</h3>
+          <p>৳1,619</p>
+          <p>Rating: ⭐⭐⭐⭐⭐</p>
+          <button>Add to Cart</button>
+        </div>
+
+        <!-- Health & Beauty -->
+        <div class="product" data-category="health">
+          <img src="https://via.placeholder.com/150" alt="Product 21" />
+          <h3>Shampoo</h3>
+          <p>৳1,079</p>
+          <p>Rating: ⭐⭐⭐⭐⭐</p>
+          <button>Add to Cart</button>
+        </div>
+
+        <!-- Sports & Outdoors -->
+        <div class="product" data-category="sports">
+          <img src="https://via.placeholder.com/150" alt="Product 25" />
+          <h3>Yoga Mat</h3>
+          <p>৳2,159</p>
+          <p>Rating: ⭐⭐⭐⭐⭐</p>
+          <button>Add to Cart</button>
+        </div>
+
+        <!-- Food & Grocery -->
+        <div class="product" data-category="food">
+          <img src="https://via.placeholder.com/150" alt="Product 29" />
+          <h3>Apple</h3>
+          <p>৳249</p>
+          <p>Rating: ⭐⭐⭐⭐⭐</p>
+          <button>Add to Cart</button>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+      <div class="footer-container">
+        <div class="footer-section">
+          <h3>About Us</h3>
+          <p style="text-align: justify">
+            ClickBazaar is an online shopping platform offering a wide range of
+            products at great prices. We aim to provide an easy and convenient
+            shopping experience for all our customers.
+          </p>
+        </div>
+
+        <div class="footer-section">
+          <h3>Customer Service</h3>
+          <ul>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Shipping & Returns</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h3>Follow Us</h3>
+          <ul class="social-links">
+            <li>
+              <a
+                href="https://www.facebook.com"
+                class="social-icon facebook"
+                target="_blank"
+                >Facebook</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://www.twitter.com"
+                class="social-icon twitter"
+                target="_blank"
+                >Twitter</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://www.instagram.com"
+                class="social-icon instagram"
+                target="_blank"
+                >Instagram</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://www.linkedin.com"
+                class="social-icon linkedin"
+                target="_blank"
+                >LinkedIn</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="#" target="_blank">Terms & Conditions</a></li>
+            <li><a href="#" target="_blank">Return Policy</a></li>
+            <li><a href="#" target="_blank">Payment Methods</a></li>
+            <li><a href="#" target="_blank">Affiliate Program</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2024 ClickBazaar. All rights reserved.</p>
+        <p>Designed by Shahid Hasan Shuvo</p>
+      </div>
+    </footer>
+
+    <script src="home.js"></script>
+  </body>
+</html>
