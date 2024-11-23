@@ -5,13 +5,11 @@ body {
   background-color: #f4f4f4;
 }
 
-/* General Header Styling */
 header {
   background-color: #f8f9fa;
   padding: 10px 0;
 }
 
-/* Flex container to hold header content */
 .header-content {
   display: flex;
   justify-content: space-between;
@@ -21,7 +19,6 @@ header {
   padding: 0 20px;
 }
 
-/* Category Filter */
 .category-filter {
   flex: 1;
   display: flex;
@@ -38,7 +35,6 @@ header {
   border: 1px solid #ccc;
 }
 
-/* Search Container (Centered) */
 .search-container {
   flex: 2;
   display: flex;
@@ -66,7 +62,6 @@ header {
   background-color: #0056b3;
 }
 
-/* Go to Cart Button */
 .go-to-cart-btn {
   padding: 10px 20px;
   background-color: #28a745;
@@ -80,7 +75,6 @@ header {
   background-color: #218838;
 }
 
-/* Footer Styling */
 footer {
   background-color: #333;
   color: white;
@@ -182,7 +176,6 @@ footer {
   margin: 5px 0;
 }
 
-/* Product List */
 #product-list {
   display: flex;
   flex-wrap: wrap;
