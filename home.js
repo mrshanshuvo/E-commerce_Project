@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function () {
     product.querySelector('button').addEventListener('click', () => {
       const name = product.querySelector('h3').textContent;
       const priceText = product.querySelector('p').textContent;
-      const price = parseFloat(priceText.replace(/[^\d.-]/g, '')); // Strip non-numeric characters from price
+      const price = parseFloat(priceText.replace(/[^\d.-]/g, ''));
       let cart = JSON.parse(localStorage.getItem('cart')) || [];
       let item = cart.find(i => i.name === name);
 
