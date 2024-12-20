@@ -21,7 +21,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $stmt->bind_param("sss", $full_name, $email, $hashed_password);
 
     if ($stmt->execute()) {
-        echo "Signup successful! <a href='index.php'>Login</a>";
+        // Redirect to signup_success.php after successful signup
+        header("Location: signup_success.php");
+        exit();
     } else {
         echo "Error: " . $stmt->error;
     }
@@ -45,7 +47,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <div class="container">
         <div class="form-container">
             <h1>Signup</h1>
-            <form action="signup_handler.php" method="POST" class="form">
+            <form action="signup.php" method="POST" class="form">
                 <h2>Create an Account</h2>
                 <input type="text" name="full_name" placeholder="Full Name" required>
                 <input type="email" name="email" placeholder="Email" required>
