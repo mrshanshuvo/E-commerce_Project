@@ -9,6 +9,12 @@
   <body>
     <header>
       <div class="header-content">
+        <div class="logo">
+          <a href="../home/home.html">
+            <img src="../ClickBazaar Logo.webp" alt="ClickBazaar Logo" />
+          </a>
+        </div>
+
         <div class="category-filter">
           <label for="category">Category:</label>
           <select id="category" name="category">
@@ -31,7 +37,6 @@
           </button>
         </div>
 
-        <!-- Added Features -->
         <div class="header-icons">
           <select id="language-selector">
             <option value="en">English</option>
@@ -39,7 +44,7 @@
           </select>
         </div>
 
-        <a href="/cart/cart.html" class="go-to-cart-btn">Go to Cart</a>
+        <a href="../cart/cart.html" class="go-to-cart-btn">Go to Cart</a>
       </div>
     </header>
 
@@ -48,162 +53,15 @@
         <section id="product-list">
           <!-- Electronics -->
           <div class="product" data-category="electronics">
-            <img src="https://via.placeholder.com/150" alt="Product 1" />
+            <img src="../router1.webp" alt="Product 1" />
             <div class="product-header">
-              <h3>Smartphone</h3>
+              <h3>Router</h3>
               <p class="price">৳21,599</p>
             </div>
             <p>Rating: ⭐⭐⭐⭐⭐</p>
             <div class="product-footer">
               <label for="quantity-electronics">Quantity:</label>
               <select id="quantity-electronics" name="quantity">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-              </select>
-              <button>Add to Cart</button>
-            </div>
-          </div>
-
-          <!-- Fashion -->
-          <div class="product" data-category="fashion">
-            <img src="https://via.placeholder.com/150" alt="Product 5" />
-            <div class="product-header">
-              <h3>T-Shirt</h3>
-              <p class="price">৳2,159</p>
-            </div>
-            <p>Rating: ⭐⭐⭐⭐</p>
-            <div class="product-footer">
-              <label for="quantity-fashion">Quantity:</label>
-              <select id="quantity-fashion" name="quantity">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-              </select>
-              <button>Add to Cart</button>
-            </div>
-          </div>
-
-          <!-- Home & Garden -->
-          <div class="product" data-category="home">
-            <img src="https://via.placeholder.com/150" alt="Product 9" />
-            <div class="product-header">
-              <h3>Chair</h3>
-              <p class="price">৳8,639</p>
-            </div>
-            <p>Rating: ⭐⭐⭐⭐⭐</p>
-            <div class="product-footer">
-              <label for="quantity-home">Quantity:</label>
-              <select id="quantity-home" name="quantity">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-              </select>
-              <button>Add to Cart</button>
-            </div>
-          </div>
-
-          <!-- Toys -->
-          <div class="product" data-category="toys">
-            <img src="https://via.placeholder.com/150" alt="Product 13" />
-            <div class="product-header">
-              <h3>Toy Car</h3>
-              <p class="price">৳1,619</p>
-            </div>
-            <p>Rating: ⭐⭐⭐</p>
-            <div class="product-footer">
-              <label for="quantity-toys">Quantity:</label>
-              <select id="quantity-toys" name="quantity">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-              </select>
-              <button>Add to Cart</button>
-            </div>
-          </div>
-
-          <!-- Books -->
-          <div class="product" data-category="books">
-            <img src="https://via.placeholder.com/150" alt="Product 17" />
-            <div class="product-header">
-              <h3>Novel</h3>
-              <p class="price">৳1,619</p>
-            </div>
-            <p>Rating: ⭐⭐⭐⭐⭐</p>
-            <div class="product-footer">
-              <label for="quantity-books">Quantity:</label>
-              <select id="quantity-books" name="quantity">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-              </select>
-              <button>Add to Cart</button>
-            </div>
-          </div>
-
-          <!-- Health & Beauty -->
-          <div class="product" data-category="health">
-            <img src="https://via.placeholder.com/150" alt="Product 21" />
-            <div class="product-header">
-              <h3>Shampoo</h3>
-              <p class="price">৳1,079</p>
-            </div>
-            <p>Rating: ⭐⭐⭐⭐⭐</p>
-            <div class="product-footer">
-              <label for="quantity-health">Quantity:</label>
-              <select id="quantity-health" name="quantity">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-              </select>
-              <button>Add to Cart</button>
-            </div>
-          </div>
-
-          <!-- Sports & Outdoors -->
-          <div class="product" data-category="sports">
-            <img src="https://via.placeholder.com/150" alt="Product 25" />
-            <div class="product-header">
-              <h3>Yoga Mat</h3>
-              <p class="price">৳2,159</p>
-            </div>
-            <p>Rating: ⭐⭐⭐⭐⭐</p>
-            <div class="product-footer">
-              <label for="quantity-sports">Quantity:</label>
-              <select id="quantity-sports" name="quantity">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-              </select>
-              <button>Add to Cart</button>
-            </div>
-          </div>
-
-          <!-- Food & Grocery -->
-          <div class="product" data-category="food">
-            <img src="https://via.placeholder.com/150" alt="Product 29" />
-            <div class="product-header">
-              <h3>Apple</h3>
-              <p class="price">৳249</p>
-            </div>
-            <p>Rating: ⭐⭐⭐⭐⭐</p>
-            <div class="product-footer">
-              <label for="quantity-food">Quantity:</label>
-              <select id="quantity-food" name="quantity">
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
