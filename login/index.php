@@ -48,7 +48,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <body>
     <div class="container">
         <div class="form-container">
-            <h1>Welcome</h1>
+            <h1>Welcome to ClickBazaar</h1>
             <form action="index.php" method="POST" class="form">
                 <h2>Login</h2>
                 <input type="email" name="email" placeholder="Email" required>

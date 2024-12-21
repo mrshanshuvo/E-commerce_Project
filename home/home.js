@@ -55,57 +55,60 @@ document.addEventListener('DOMContentLoaded', () => {
   updateLanguage(languageSelector.value);
 
   // Add to Cart functionality
-  const addToCart = (productFooter) => {
-    const product = productFooter.parentNode; // Get the parent product element
-    const name = product.querySelector('h3').textContent.trim(); // Product name
-    const priceText = product.querySelector('.price').textContent; // Product price text
-    const price = parseFloat(priceText.replace(/[^\d.-]/g, '')); // Extract numerical price
-    
-    // Get the selected quantity from the dropdown
-    const quantityDropdown = product.querySelector('select[name="quantity"]');
-    const selectedQuantity = parseInt(quantityDropdown.value, 10); // Convert to integer
-    
-    if (selectedQuantity <= 0 || isNaN(selectedQuantity)) {
-      alert('Please select a valid quantity!');
-      return;
-    }
+// Add to Cart functionality
+const addToCart = (event) => {
+  const productFooter = event.target.closest('.product-footer'); // Get the product-footer that contains the button
+  const product = productFooter.parentNode; // Get the parent product element
+  const name = product.querySelector('h3').textContent.trim(); // Product name
+  const priceText = product.querySelector('.price').textContent; // Product price text
+  const price = parseFloat(priceText.replace(/[^\d.-]/g, '')); // Extract numerical price
   
-    // Get the product image URL
-    const imageUrl = product.querySelector('img').src; // Assuming the product image is an <img> tag
+  // Get the selected quantity from the dropdown
+  const quantityDropdown = product.querySelector('select[name="quantity"]');
+  const selectedQuantity = parseInt(quantityDropdown.value, 10); // Convert to integer
   
-    let cart = JSON.parse(localStorage.getItem('cart')) || []; // Retrieve cart from localStorage
-  
-    // Find the product in the cart
-    const existingProduct = cart.find((item) => item.name === name);
-  
-    if (existingProduct) {
-      // If the product already exists in the cart, increment its quantity
-      existingProduct.quantity += selectedQuantity;
-    } else {
-      // If the product is not in the cart, add it as a new entry
-      cart.push({ name, price, quantity: selectedQuantity, image: imageUrl }); // Add image to the cart data
-    }
-  
-    // Save the updated cart back to localStorage
-    localStorage.setItem('cart', JSON.stringify(cart));
-  
-    // Update button text
-    const addButton = productFooter.querySelector('button');
-    addButton.textContent = `Added (${selectedQuantity})`;  // Change the button text to 'Added (quantity)'
-  
-    // Disable the button to prevent further clicks
-    addButton.disabled = true;
-  
-    // Re-enable the button after 1 second
-    setTimeout(() => {
-      addButton.textContent = 'Add to Cart';  // Reset the button text back to 'Add to Cart'
-      addButton.disabled = false;  // Re-enable the button
-    }, 1000); // 1000 ms = 1 second
-  };
-  
-  
+  if (selectedQuantity <= 0 || isNaN(selectedQuantity)) {
+    alert('Please select a valid quantity!');
+    return;
+  }
 
-  
+  // Get the product image URL
+  const imageUrl = product.querySelector('img').src; // Assuming the product image is an <img> tag
+
+  let cart = JSON.parse(localStorage.getItem('cart')) || []; // Retrieve cart from localStorage
+
+  // Find the product in the cart
+  const existingProduct = cart.find((item) => item.name === name);
+
+  if (existingProduct) {
+    // If the product already exists in the cart, increment its quantity
+    existingProduct.quantity += selectedQuantity;
+  } else {
+    // If the product is not in the cart, add it as a new entry
+    cart.push({ name, price, quantity: selectedQuantity, image: imageUrl }); // Add image to the cart data
+  }
+
+  // Save the updated cart back to localStorage
+  localStorage.setItem('cart', JSON.stringify(cart));
+
+  // Update button text
+  const addButton = productFooter.querySelector('button');
+  addButton.textContent = `Added (${selectedQuantity})`;  // Change the button text to 'Added (quantity)'
+
+  // Disable the button to prevent further clicks
+  addButton.disabled = true;
+
+  // Re-enable the button after 1 second
+  setTimeout(() => {
+    addButton.textContent = 'Add to Cart';  // Reset the button text back to 'Add to Cart'
+    addButton.disabled = false;  // Re-enable the button
+  }, 1000); // 1000 ms = 1 second
+};
+
+// Add event listeners to all "Add to Cart" buttons
+document.querySelectorAll('.product-footer button').forEach(button => {
+  button.addEventListener('click', addToCart);
+});
 
   products.forEach((product) => {
     const addButton = product.querySelector('button');

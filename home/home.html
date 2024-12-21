@@ -6,15 +6,18 @@
     <title>ClickBazaar</title>
     <link rel="stylesheet" href="home.css" />
   </head>
+
   <body>
     <header>
       <div class="header-content">
+        <!-- Logo -->
         <div class="logo">
           <a href="../home/home.html">
             <img src="../ClickBazaar Logo.webp" alt="ClickBazaar Logo" />
           </a>
         </div>
 
+        <!-- Category Filter -->
         <div class="category-filter">
           <label for="category">Category:</label>
           <select id="category" name="category">
@@ -30,6 +33,7 @@
           </select>
         </div>
 
+        <!-- Search Bar -->
         <div class="search-container">
           <input type="text" id="search" placeholder="Search products..." />
           <button type="submit" class="search-btn" id="search-btn">
@@ -37,6 +41,7 @@
           </button>
         </div>
 
+        <!-- Language Selector -->
         <div class="header-icons">
           <select id="language-selector">
             <option value="en">English</option>
@@ -44,7 +49,13 @@
           </select>
         </div>
 
+        <!-- Cart Link -->
         <a href="../cart/cart.html" class="go-to-cart-btn">Go to Cart</a>
+
+        <!-- Logout Button -->
+        <form action="../login/dashboard.php" method="POST" class="logout-form">
+          <button type="submit" class="logout-btn">Logout</button>
+        </form>
       </div>
     </header>
 

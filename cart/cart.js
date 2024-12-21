@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function () {
     div.classList.add('cart-item');
     div.innerHTML = `
       <img src="${item.image}" alt="${item.name}" class="cart-item-image" />
-      <span>${item.name} - $${item.price}</span>
+      <span>${item.name} - ৳${item.price}</span>
       <div class="quantity-controls">
         <button class="decrement" data-item="${item.name}">-</button>
         <span class="item-quantity">${item.quantity}</span>
@@ -74,7 +74,7 @@ document.addEventListener('DOMContentLoaded', function () {
       div.classList.add('wishlist-item');
       div.innerHTML = `
         <img src="${item.image}" alt="${item.name}" class="wishlist-item-image" />
-        <p>${item.name} - $${item.price}</p>
+        <p>${item.name} - ৳${item.price}</p>
         <button class="add-to-cart" data-item="${item.name}">Add to Cart</button>
       `;
       div.querySelector('.add-to-cart').addEventListener('click', () => {
