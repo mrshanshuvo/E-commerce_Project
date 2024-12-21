@@ -150,4 +150,63 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   categoryFilter.addEventListener('change', filterByCategory);
+ // Add Modal Functionality for Product Details
+ const showProductDetails = (product) => {
+  const name = product.querySelector('h3').textContent.trim();
+  const price = product.querySelector('.price').textContent.trim();
+  const imageUrl = product.querySelector('img').src;
+  const description = product.getAttribute('data-description') || "No description available.";
+
+  const modal = document.createElement('div');
+  modal.classList.add('modal');
+  modal.innerHTML = `
+    <div class="modal-content">
+      <span class="close-btn">&times;</span>
+      <img src="${imageUrl}" alt="${name}" />
+      <h3>${name}</h3>
+      <p>${price}</p>
+      <p>${description}</p>
+    </div>
+  `;
+  document.body.appendChild(modal);
+
+  modal.querySelector('.close-btn').addEventListener('click', () => modal.remove());
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) modal.remove();
+  });
+};
+
+products.forEach((product) => {
+  const image = product.querySelector('img');
+  if (image) {
+    image.addEventListener('click', () => showProductDetails(product));
+  }
+});
+const serviceLinks = document.querySelectorAll('.service-link');
+
+  const showServiceModal = (content) => {
+    const modal = document.createElement('div');
+    modal.classList.add('modal');
+    modal.innerHTML = `
+      <div class="modal-content">
+        <span class="close-btn">&times;</span>
+        <h3>Customer Service</h3>
+        <p>${content}</p>
+      </div>
+    `;
+    document.body.appendChild(modal);
+
+    modal.querySelector('.close-btn').addEventListener('click', () => modal.remove());
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) modal.remove();
+    });
+  };
+
+  serviceLinks.forEach((link) => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault(); // Prevent the default link behavior
+      const content = link.getAttribute('data-content');
+      showServiceModal(content);
+    });
+  });
 });
