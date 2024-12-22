@@ -22,7 +22,6 @@ $full_name = $_SESSION['full_name'];
 <body>
     <div class="container">
         <h1>You're are leaving, <?php echo htmlspecialchars($full_name); ?>!</h1>
-        <!-- <p>You have successfully logged in.</p> -->
         <a href="logout.php" class="button">Logout</a>
     </div>
 </body>

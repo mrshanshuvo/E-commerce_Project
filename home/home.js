@@ -51,17 +51,16 @@ document.addEventListener('DOMContentLoaded', () => {
     updateLanguage(selectedLang);
   });
 
-  // Set default language on page load
   updateLanguage(languageSelector.value);
 
-  // Add to Cart functionality
+  
 // Add to Cart functionality
 const addToCart = (event) => {
-  const productFooter = event.target.closest('.product-footer'); // Get the product-footer that contains the button
-  const product = productFooter.parentNode; // Get the parent product element
-  const name = product.querySelector('h3').textContent.trim(); // Product name
-  const priceText = product.querySelector('.price').textContent; // Product price text
-  const price = parseFloat(priceText.replace(/[^\d.-]/g, '')); // Extract numerical price
+  const productFooter = event.target.closest('.product-footer');
+  const product = productFooter.parentNode;
+  const name = product.querySelector('h3').textContent.trim();
+  const priceText = product.querySelector('.price').textContent;
+  const price = parseFloat(priceText.replace(/[^\d.-]/g, ''));
   
   // Get the selected quantity from the dropdown
   const quantityDropdown = product.querySelector('select[name="quantity"]');
@@ -72,37 +71,31 @@ const addToCart = (event) => {
     return;
   }
 
-  // Get the product image URL
-  const imageUrl = product.querySelector('img').src; // Assuming the product image is an <img> tag
+ 
+  const imageUrl = product.querySelector('img').src; 
 
-  let cart = JSON.parse(localStorage.getItem('cart')) || []; // Retrieve cart from localStorage
-
-  // Find the product in the cart
+  let cart = JSON.parse(localStorage.getItem('cart')) || [];
   const existingProduct = cart.find((item) => item.name === name);
 
   if (existingProduct) {
-    // If the product already exists in the cart, increment its quantity
+ 
     existingProduct.quantity += selectedQuantity;
   } else {
-    // If the product is not in the cart, add it as a new entry
-    cart.push({ name, price, quantity: selectedQuantity, image: imageUrl }); // Add image to the cart data
+   
+    cart.push({ name, price, quantity: selectedQuantity, image: imageUrl });
   }
 
-  // Save the updated cart back to localStorage
   localStorage.setItem('cart', JSON.stringify(cart));
 
-  // Update button text
   const addButton = productFooter.querySelector('button');
-  addButton.textContent = `Added (${selectedQuantity})`;  // Change the button text to 'Added (quantity)'
+  addButton.textContent = `Added (${selectedQuantity})`;
 
-  // Disable the button to prevent further clicks
   addButton.disabled = true;
 
-  // Re-enable the button after 1 second
   setTimeout(() => {
-    addButton.textContent = 'Add to Cart';  // Reset the button text back to 'Add to Cart'
-    addButton.disabled = false;  // Re-enable the button
-  }, 1000); // 1000 ms = 1 second
+    addButton.textContent = 'Add to Cart';
+    addButton.disabled = false; 
+  }, 1000); 
 };
 
 // Add event listeners to all "Add to Cart" buttons
@@ -153,7 +146,7 @@ document.querySelectorAll('.product-footer button').forEach(button => {
   };
 
   categoryFilter.addEventListener('change', filterByCategory);
- // Add Modal Functionality for Product Details
+ // Modal Functionality for Product Details
  const showProductDetails = (product) => {
   const name = product.querySelector('h3').textContent.trim();
   const price = product.querySelector('.price').textContent.trim();
@@ -207,7 +200,7 @@ const serviceLinks = document.querySelectorAll('.service-link');
 
   serviceLinks.forEach((link) => {
     link.addEventListener('click', (e) => {
-      e.preventDefault(); // Prevent the default link behavior
+      e.preventDefault();
       const content = link.getAttribute('data-content');
       showServiceModal(content);
     });

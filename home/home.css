@@ -1,15 +1,14 @@
-/* Base Styles */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #f9fafb; /* Light gray background for a clean look */
+  background-color: #f9fafb;
 }
 
 header {
-  background-color: #1f2937; /* Dark blue-gray for a professional header */
+  background-color: #1f2937;
   padding: 10px 0;
-  border-bottom: 2px solid #4b5563; /* Slightly lighter border */
+  border-bottom: 2px solid #4b5563;
 }
 
 .header-content {
@@ -30,15 +29,14 @@ header {
 }
 
 .logo img {
-  width: 50px; /* Adjust the size of your logo */
+  width: 50px;
   height: auto;
   object-fit: contain;
   transition: transform 0.3s ease;
 }
 
-/* Logo hover effect */
 .logo img:hover {
-  transform: scale(1.05); /* Slight zoom effect on hover */
+  transform: scale(1.05);
 }
 .category-filter {
   flex: 1;
@@ -50,15 +48,15 @@ header {
 .category-filter label {
   margin-right: 10px;
   font-weight: bold;
-  color: #9ca4ae; /* Muted dark gray for text */
+  color: #9ca4ae;
 }
 
 .category-filter select {
   padding: 5px 10px;
   border-radius: 5px;
-  border: 1px solid #d1d5db; /* Light border */
+  border: 1px solid #d1d5db;
   background-color: #ffffff;
-  color: #374151; /* Dark gray text */
+  color: #374151;
   font-weight: bold;
 }
 
@@ -81,7 +79,7 @@ header {
   padding: 8px 16px;
   border-radius: 5px;
   border: none;
-  background-color: #3b82f6; /* Blue button for search */
+  background-color: #3b82f6;
   color: white;
   font-weight: bold;
   cursor: pointer;
@@ -89,7 +87,7 @@ header {
 }
 
 .search-container .search-btn:hover {
-  background-color: #2563eb; /* Darker blue on hover */
+  background-color: #2563eb;
 }
 
 .go-to-cart-btn {
@@ -104,7 +102,7 @@ header {
 }
 
 .go-to-cart-btn:hover {
-  background-color: #059669; /* Darker green on hover */
+  background-color: #059669;
 }
 .logout-btn {
   padding: 10px 20px;
@@ -128,7 +126,7 @@ header {
 
 .auth-btn {
   text-decoration: none;
-  color: #3b82f6; /* Blue for authentication buttons */
+  color: #3b82f6;
   font-weight: bold;
   padding: 5px 10px;
   border-radius: 5px;
@@ -137,7 +135,7 @@ header {
 }
 
 .auth-btn:hover {
-  background-color: #bfdbfe; /* Lighter blue on hover */
+  background-color: #bfdbfe;
 }
 
 #language-selector {
@@ -178,7 +176,7 @@ header {
 
 /* Footer Styles */
 footer {
-  background-color: #333; /* Dark footer for contrast */
+  background-color: #333;
   color: white;
   padding: 40px 0;
 }

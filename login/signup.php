@@ -21,7 +21,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $stmt->bind_param("sss", $full_name, $email, $hashed_password);
 
     if ($stmt->execute()) {
-        // Redirect to signup_success.php after successful signup
         header("Location: signup_success.php");
         exit();
     } else {

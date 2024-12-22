@@ -19,7 +19,6 @@ document.addEventListener('DOMContentLoaded', function () {
       <button class="remove-item" aria-label="Remove ${item.name}">Remove</button>
     `;
 
-    // Increment and decrement buttons
     div.querySelector('.increment').addEventListener('click', () => {
       updateItemQuantity(item.name, item.quantity + 1);
     });
@@ -30,7 +29,6 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     });
 
-    // Save for later
     div.querySelector('.save-for-later').addEventListener('click', () => {
       const savedItems = JSON.parse(localStorage.getItem('savedItems')) || [];
       savedItems.push(item);
@@ -39,8 +37,6 @@ document.addEventListener('DOMContentLoaded', function () {
       localStorage.setItem('cart', JSON.stringify(updatedCart));
       location.reload();
     });
-
-    // Remove item
     div.querySelector('.remove-item').addEventListener('click', () => {
       const updatedCart = cart.filter((i) => i.name !== item.name);
       localStorage.setItem('cart', JSON.stringify(updatedCart));
@@ -95,15 +91,10 @@ document.addEventListener('DOMContentLoaded', function () {
     location.reload();
   });
 
-  // Proceed to checkout
   document.getElementById('checkout-btn').addEventListener('click', () => {
-    // Store cart data in sessionStorage
     sessionStorage.setItem('cart', JSON.stringify(cart));
-  
-    // Clear the cart from localStorage
+
     localStorage.removeItem('cart');
-  
-    // Redirect to the payment page
     window.location.href = '../payment/payment.html';
   });
   
